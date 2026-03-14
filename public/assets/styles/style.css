@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+header {
+  display: flex;
+  padding: 0 0.5rem;
+  background-color: rgba(246, 245, 245, 1);
+
+  ul {
+    list-style: none;
+    display: flex;
+    margin-left: auto;
+    gap: 1rem;
+    display: flex;
+    align-items: center;
+
+    li {
+      background-color: white;
+      border-radius: 50%;
+      height: fit-content;
+      width: 50px;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border: 0.5px solid rgba(201, 201, 201, 1);
+    }
+  }
+}
+
+footer {
+  background-color: rgba(249, 242, 212, 1);
+  padding: 1rem;
+
+  img {
+    width: 100%;
+  }
+
+  h4 {
+    font-size: 18px;
+    padding-top: 2rem;
+  }
+
+  .cadeaus-heading {
+    padding: 0;
+  }
+
+  ul {
+    list-style: none;
+    padding-top: 1rem;
+    font-size: 14px;
+
+    a {
+      text-decoration: none;
+      color: black;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .cadeaus,
+  .voor-wie {
+    padding: 0;
+  }
+}
