@@ -37,7 +37,19 @@ app.get(…, async function (request, response) {
 */
 
 app.get("/", async function (req, res) {
-  res.render("index.liquid");
+  const params = {
+    fields: "name,image,amount",
+  };
+
+  const productResponse = await fetch(
+    "https://fdnd-agency.directus.app/items/milledoni_products/?" +
+      new URLSearchParams(params),
+  );
+  const productResponseJSON = await productResponse.json();
+
+  res.render("index.liquid", {
+    products: productResponseJSON.data,
+  });
 });
 
 /*

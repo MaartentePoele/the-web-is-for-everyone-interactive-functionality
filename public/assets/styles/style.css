@@ -5,10 +5,13 @@
   font-family: sans-serif;
 }
 
+body {
+  background-color: rgba(246, 245, 245, 1);
+}
+
 header {
   display: flex;
   padding: 0 0.5rem;
-  background-color: rgba(246, 245, 245, 1);
 
   ul {
     list-style: none;
@@ -106,7 +109,8 @@ aside {
       margin-left: auto;
     }
 
-    .mic-button, .search-button:hover {
+    .mic-button,
+    .search-button:hover {
       cursor: pointer;
     }
 
@@ -116,10 +120,35 @@ aside {
   }
 }
 
+section {
+  padding: 1rem;
+  /* background-color: lime; */
+
+  a {
+    text-decoration: none;
+    color: black;
+
+    article {
+      margin-bottom: 1rem;
+      width: 250px;
+      background-color: white;
+      padding: 0.5rem;
+
+      img {
+        width: 100%;
+      }
+
+      p {
+        color: gray;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
 footer {
   background-color: rgba(249, 242, 212, 1);
   padding: 1rem 1rem 110px 1rem;
-  
 
   img {
     width: clamp(250px, 100%, 400px);
