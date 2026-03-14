@@ -31,12 +31,98 @@ header {
   }
 }
 
-footer {
-  background-color: rgba(249, 242, 212, 1);
-  padding: 1rem;
+.ribbon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   img {
+    bottom: -5px;
+  }
+
+  .ribbon-line {
+    height: 6px;
     width: 100%;
+    background-color: #e0b000;
+    position: relative;
+    bottom: 5px;
+  }
+}
+
+aside {
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem 2rem 0 0;
+  padding: 1rem;
+
+  .input-container {
+    border: 5px solid transparent;
+    background:
+      linear-gradient(#fff, #fff) padding-box,
+      conic-gradient(
+          from 0turn at 50% 50%,
+          #466ebf 11%,
+          #aa2677 46%,
+          #e0b000 75%,
+          #466ebf 100%
+        )
+        border-box;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+
+    height: fit-content;
+    width: 100%;
+    border-radius: 5rem;
+    display: flex;
+    align-items: center;
+    padding: 0.25rem;
+
+    button,
+    input {
+      background: none;
+      border: none;
+    }
+
+    input {
+      width: 100%;
+      font-size: 1rem;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .mic-button {
+      padding: 0 1rem;
+    }
+
+    .search-button {
+      margin-left: auto;
+    }
+
+    .mic-button, .search-button:hover {
+      cursor: pointer;
+    }
+
+    img {
+      display: block;
+    }
+  }
+}
+
+footer {
+  background-color: rgba(249, 242, 212, 1);
+  padding: 1rem 1rem 110px 1rem;
+  
+
+  img {
+    width: clamp(250px, 100%, 400px);
   }
 
   h4 {
@@ -51,7 +137,6 @@ footer {
   ul {
     list-style: none;
     padding-top: 1rem;
-    font-size: 14px;
 
     a {
       text-decoration: none;
