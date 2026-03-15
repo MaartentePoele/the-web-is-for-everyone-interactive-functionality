@@ -23,10 +23,6 @@ app.engine("liquid", engine.express());
 // Let op: de browser kan deze bestanden niet rechtstreeks laden (zoals voorheen met HTML bestanden)
 app.set("views", "./views");
 
-console.log(
-  "Let op: Er zijn nog geen routes. Voeg hier dus eerst jouw GET en POST routes toe.",
-);
-
 /*
 // Zie https://expressjs.com/en/5x/api.html#app.get.method over app.get()
 app.get(…, async function (request, response) {
@@ -38,7 +34,30 @@ app.get(…, async function (request, response) {
 
 app.get("/", async function (req, res) {
   const params = {
-    fields: "name,image,amount",
+    fields: "name,image,amount,slug",
+  };
+
+  if (req.query.price) {
+    params["filter[amount][_between]"] = "0," + req.query.price;
+  } else {
+    params["sort"] = "id";
+  }
+
+  const productResponse = await fetch(
+    "https://fdnd-agency.directus.app/items/milledoni_products/?" +
+      new URLSearchParams(params),
+  );
+  const productResponseJSON = await productResponse.json();
+
+  res.render("index.liquid", {
+    products: productResponseJSON.data,
+  });
+});
+
+app.get("/gifts/:tags", async function (req, res) {
+  const params = {
+    fields: "name,image,amount,slug",
+    "filter[tags][_contains]": req.params.tags,
   };
 
   const productResponse = await fetch(
@@ -93,7 +112,5 @@ app.set("port", process.env.PORT || 8000);
 // Start Express op, gebruik daarbij het zojuist ingestelde poortnummer op
 app.listen(app.get("port"), function () {
   // Toon een bericht in de console
-  console.log(
-    `Daarna kun je via http://localhost:${app.get("port")}/ jouw interactieve website bekijken.\n\nThe Web is for Everyone. Maak mooie dingen 🙂`,
-  );
+  console.log(`http://localhost:${app.get("port")}`);
 });
