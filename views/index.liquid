@@ -8,7 +8,7 @@
   <div class="ribbon-line"></div>
 </div>
 
-<section>
+<section class="products">
   {% for product in products %}
     {% if product.amount != "0.00" %}
       <a href="/gift/{{ product.slug }}">

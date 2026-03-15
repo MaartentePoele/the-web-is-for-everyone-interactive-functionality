@@ -56,6 +56,31 @@ header {
   }
 }
 
+.product {
+  padding: 3rem 1rem 1rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  h2 {
+    font-size: 26px;
+  }
+
+  .price,
+  .description {
+    color: rgba(33, 33, 33, 1);
+  }
+
+  .price {
+    font-size: 18px;
+    width: 159px;
+  }
+
+  .product-image {
+    width: clamp(250px, 100%, 500px);
+  }
+}
+
 aside {
   background-color: white;
   position: fixed;
@@ -124,7 +149,7 @@ aside {
   }
 }
 
-section {
+.products {
   padding: 1rem;
   /* background-color: lime; */
 
