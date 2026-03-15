@@ -71,6 +71,23 @@ app.get("/gifts/:tags", async function (req, res) {
   });
 });
 
+app.get("/gift/:slug", async function (req, res) {
+  const params = {
+    fields: "name,image,amount,description",
+    "filter[slug][_eq]": req.params.slug,
+  };
+
+  const productResponse = await fetch(
+    "https://fdnd-agency.directus.app/items/milledoni_products/?" +
+      new URLSearchParams(params),
+  );
+  const productResponseJSON = await productResponse.json();
+
+  res.render("gift.liquid", {
+    product: productResponseJSON.data[0],
+  });
+});
+
 /*
 // Zie https://expressjs.com/en/5x/api.html#app.post.method over app.post()
 app.post(…, async function (request, response) {
