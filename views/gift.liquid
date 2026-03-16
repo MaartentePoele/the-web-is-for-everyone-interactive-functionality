@@ -1,8 +1,8 @@
 {% include 'partials/head.liquid' %}
-  <section class="product">
-    <h2>{{ product.name }}</h2>
-    <p class="price">from <strong>{{ product.amount }}</strong> EUR online and near you</p>
-    <img class="product-image" src="{{ product.image }}">
-    <p class="description">{{ product.description }}</p>
+  <section class="product-info">
+    <h2 class="info-name">{{ product.name }}</h2>
+    <p class="info-price">from <strong>{{ product.amount }}</strong> EUR online and near you</p>
+    <img class="info-image" src="{{ product.image }}">
+    <p class="info-description">{{ product.description }}</p>
   </section>
 {% include 'partials/foot.liquid' %}
