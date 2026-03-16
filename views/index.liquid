@@ -9,7 +9,11 @@
   {% for product in products %}
     {% if product.amount != "0.00" %}
       <article class="gift">
-        <button class="save-button"><img src="/assets/images/black-save-icon.svg" alt=""></button>
+        <form method="post" action="/">
+          <button class="save-button" type="submit" name="id" value="{{ product.id }}">
+            <img src="/assets/images/black-save-icon.svg" alt="">
+          </button>
+        </form>
         <a href="/gift/{{ product.slug }}">
           <img class="product-image" src="{{ product.image }}" alt="">
           <h3 class="product-name">{{ product.name }}</h3>
