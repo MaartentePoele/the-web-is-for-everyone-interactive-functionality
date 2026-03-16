@@ -11,13 +11,14 @@
 <section class="products">
   {% for product in products %}
     {% if product.amount != "0.00" %}
-      <a href="/gift/{{ product.slug }}">
-        <article>
+      <article>
+        <button class="save-button"><img src="/assets/images/save-icon.svg"></button>
+        <a href="/gift/{{ product.slug }}">
           <img class="product-image" src="{{ product.image }}" alt="">
           <h3>{{ product.name }}</h3>
           <p>€{{ product.amount }}</p>
-        </article>
-      </a>
+        </a>
+      </article>
     {% endif %}
   {% endfor %}
 </section>
