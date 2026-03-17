@@ -6,6 +6,7 @@
 </div>
 
 <section class="gifts-overview">
+  <h1 class="visually-hidden">Gifts</h1>
   {% for product in products %}
     {% if product.amount != "0.00" %}
       <article class="gift">
@@ -29,7 +30,7 @@
     <button class="mic-button"><img src="/assets/images/mic-icon.svg" alt=""></button>
     <input type="text" placeholder="Type your message...">
     <button class="search-button"><img src="/assets/images/search-icon.svg" alt=""></button>
-  <div>
+  </div>
 </aside>
 
 {% include 'partials/foot.liquid' %}

@@ -5,6 +5,10 @@
   font-family: sans-serif;
 }
 
+.visually-hidden {
+  display: none;
+}
+
 body {
   background-color: rgba(246, 245, 245, 1);
 }
