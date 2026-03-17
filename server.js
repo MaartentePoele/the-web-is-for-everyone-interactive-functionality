@@ -8,7 +8,6 @@ const engine = new Liquid();
 app.engine("liquid", engine.express());
 app.set("views", "./views");
 
-
 app.get("/", async function (req, res) {
   const params = {
     fields: "name,image,amount,slug,id",
@@ -65,6 +64,29 @@ app.get("/gift/:slug", async function (req, res) {
   });
 });
 
+app.get("/wishlist", async function (req, res) {
+  const params = {
+    fields:
+      "liked_products.milledoni_products_id.slug," +
+      "liked_products.milledoni_products_id.image," +
+      "liked_products.milledoni_products_id.name," +
+      "liked_products.milledoni_products_id.amount," +
+      "liked_products.milledoni_products_id.id",
+  };
+
+  const productResponse = await fetch(
+    "https://fdnd-agency.directus.app/items/milledoni_users/58/?" +
+      new URLSearchParams(params),
+  );
+  const productResponseJSON = await productResponse.json();
+
+  console.log(productResponseJSON.data);
+
+  res.render("wishlist.liquid", {
+    products: productResponseJSON.data,
+  });
+});
+
 app.post("/", async function (request, response) {
   const fetchResponse = await fetch(
     "https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products_1",
@@ -83,7 +105,7 @@ app.post("/", async function (request, response) {
   const fetchResponseJSON = await fetchResponse.json();
   console.log(fetchResponseJSON);
 
-  response.redirect(303, request.header('Referer') || '/');
+  response.redirect(303, request.header("Referer") || "/");
 });
 
 app.set("port", process.env.PORT || 8000);

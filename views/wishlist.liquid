@@ -1,0 +1,21 @@
+{% include 'partials/head.liquid' %}
+
+<section class="gifts-overview">
+  <h1 class="visually-hidden">Gifts</h1>
+  {% for product in products.liked_products %}
+    <article class="gift">
+      <form method="post" action="/">
+        <button class="save-button" type="submit" name="id" value="{{ product.id }}">
+          <img src="/assets/images/black-save-icon.svg" alt="">
+        </button>
+      </form>
+      <a href="/gift/{{ product.milledoni_products_id.slug }}">
+        <img class="product-image" src="{{ product.milledoni_products_id.image }}" alt="">
+        <h2 class="product-name">{{ product.milledoni_products_id.name }}</h2>
+        <p class="product-price">€{{ product.milledoni_products_id.amount }}</p>
+      </a>
+    </article>
+  {% endfor %}
+</section>
+
+{% include 'partials/foot.liquid' %}
