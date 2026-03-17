@@ -1,9 +1,17 @@
 {% include 'partials/head.liquid' %}
-  <section class="product-info">
-    <h2 class="info-name">{{ product.name }}</h2>
-    <p class="info-price">from <strong>{{ product.amount }}</strong> EUR online and near you</p>
-    <button class="info-add-to">Add to<img src="/assets/images/save-icon.svg" alt=""></button>
-    <img class="info-image" src="{{ product.image }}">
-    <p class="info-description">{{ product.description }}</p>
-  </section>
+<section class="product-info">
+  <h2 class="info-name">{{ product.name }}</h2>
+  <p class="info-price">
+    from <strong>{{ product.amount }}</strong> EUR online and near you
+  </p>
+
+  <form action="/" method="post">
+    <button class="info-add-to-button" type="submit" name="id" value="{{ product.id }}">
+      Add to<img src="/assets/images/white-save-icon.svg" alt="">
+    </button>
+  </form>
+
+  <img class="info-image" src="{{ product.image }}" alt="">
+  <p class="info-description">{{ product.description }}</p>
+</section>
 {% include 'partials/foot.liquid' %}
