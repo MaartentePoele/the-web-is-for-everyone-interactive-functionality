@@ -25,8 +25,18 @@ app.get("/", async function (req, res) {
   );
   const productResponseJSON = await productResponse.json();
 
+  const userResponse = await fetch(
+    "https://fdnd-agency.directus.app/items/milledoni_users/58/?fields=*.*",
+  );
+  const userData = await userResponse.json();
+
+  const likedGifts = userData.data.liked_products.map(
+    (item) => item.milledoni_products_id,
+  );
+
   res.render("index.liquid", {
     products: productResponseJSON.data,
+    likedGift: likedGifts,
   });
 });
 
