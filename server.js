@@ -83,7 +83,7 @@ app.get("/wishlist", async function (req, res) {
   console.log(productResponseJSON.data);
 
   res.render("wishlist.liquid", {
-    products: productResponseJSON.data,
+    likedProducts: productResponseJSON.data.liked_products,
   });
 });
 

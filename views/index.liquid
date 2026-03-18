@@ -8,12 +8,18 @@
 <section class="gifts-overview">
   <h1 class="visually-hidden">Gifts</h1>
   {% for product in products %}
-    {% if product.amount != "0.00" %}
+    {% if product.amount != '0.00' %}
       <article class="gift">
         <form method="post" action="/">
-          <button class="save-button" type="submit" name="id" value="{{ product.id }}">
-            <img src="/assets/images/black-save-icon.svg" alt="">
-          </button>
+          {% if likedProduct %}
+            <button class="save-button" type="submit" name="id" value="{{ product.id }}">
+              <img src="/assets/images/black-saved-icon.svg" alt="">
+            </button>
+          {% else %}
+            <button class="save-button" type="submit" name="id" value="{{ product.id }}">
+              <img src="/assets/images/black-save-icon.svg" alt="">
+            </button>
+          {% endif %}
         </form>
         <a href="/gift/{{ product.slug }}">
           <img class="product-image" src="{{ product.image }}" alt="">
