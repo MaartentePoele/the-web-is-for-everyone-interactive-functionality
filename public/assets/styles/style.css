@@ -37,6 +37,21 @@ header {
 
       a {
         margin-bottom: 0.5rem;
+        position: relative;
+        color: white;
+
+        .wishlist-counter {
+          background-color: #466ebf;
+          border-radius: 50%;
+          width: 18px;
+          aspect-ratio: 1;
+          position: absolute;
+          right: -11px;
+          top: -13px;
+          display: grid;
+          place-items: center;
+          font-size: 12px;
+        }
       }
     }
   }
