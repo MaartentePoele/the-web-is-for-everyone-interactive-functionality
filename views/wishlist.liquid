@@ -1,8 +1,15 @@
 {% include 'partials/head.liquid' %}
 
+<h1 class="wishlist-header">Wishlist</h1>
+
+<div class="ribbon-container">
+  <img src="/assets/images/ribbon.svg" alt="">
+  <div class="ribbon-line"></div>
+</div>
+
 <section class="gifts-overview">
-  <h1 class="visually-hidden">Gifts</h1>
-  {% for likedProduct in likedProducts %}
+  <h2 class="visually-hidden">Gifts</h2>
+  {% for likedProduct in likedProducts reversed %}
     {% assign product = likedProduct.milledoni_products_id %}
     <article class="gift">
       <form method="post" action="/">
@@ -12,7 +19,7 @@
       </form>
       <a href="/gift/{{ product.slug }}">
         <img class="product-image" src="{{ product.image }}" alt="">
-        <h2 class="product-name">{{ product.name }}</h2>
+        <h3 class="product-name">{{ product.name }}</h3>
         <p class="product-price">€{{ product.amount }}</p>
       </a>
     </article>

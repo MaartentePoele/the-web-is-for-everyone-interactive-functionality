@@ -5,13 +5,14 @@
   <button class="close-button"><img src="/assets/images/close-icon.svg" alt=""></button>
 </div>
 
+
+<h1 class="overview-header">I'm looking for a gift for... <span>my uncle</h1>
 <div class="ribbon-container">
   <img src="/assets/images/ribbon.svg" alt="">
   <div class="ribbon-line"></div>
 </div>
 
 <section class="gifts-overview">
-  <h1 class="visually-hidden">Gifts</h1>
   {% for product in products %}
     {% if product.amount != '0.00' %}
       <article class="gift">
