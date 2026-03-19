@@ -6,13 +6,14 @@
 </div>
 
 
-<h1 class="overview-header">I'm looking for a gift for... <span>my uncle</h1>
+<h1 class="overview-header">I'm looking for a gift for... <span>my uncle</span></h1>
 <div class="ribbon-container">
   <img src="/assets/images/ribbon.svg" alt="">
   <div class="ribbon-line"></div>
 </div>
 
 <section class="gifts-overview">
+  <h2 class="display-none">Gifts</h2>
   {% for product in products %}
     {% if product.amount != '0.00' %}
       <article class="gift">
@@ -29,7 +30,7 @@
         </form>
         <a href="/gift/{{ product.slug }}">
           <img class="product-image" src="{{ product.image }}" alt="">
-          <h2 class="product-name">{{ product.name }}</h2>
+          <h3 class="product-name">{{ product.name }}</h3>
           <p class="product-price">€{{ product.amount }}</p>
         </a>
       </article>
