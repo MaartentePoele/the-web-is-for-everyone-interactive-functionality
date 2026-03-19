@@ -5,12 +5,48 @@
   font-family: sans-serif;
 }
 
-.visually-hidden {
-  display: none;
-}
 
 body {
   background-color: rgba(246, 245, 245, 1);
+}
+
+.popup {
+  background-color: #466ebf;
+  color: white;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  padding: .5rem;
+  border-radius: .5rem;
+  position: relative;
+  z-index: 10;
+  gap: .25rem;
+
+  .close-button {
+    width: 16px;
+    aspect-ratio: 1;
+    background: none;
+    border: none;
+    display: grid;
+    place-items: center;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.display-none {
+  display: none;
+}
+
+.visually-hidden {
+  visibility: hidden;
 }
 
 header {
@@ -61,9 +97,9 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
   border-bottom: 6px solid rgba(70, 110, 191, 1);
   height: 45px;
+  margin-top: 1rem;
 
   .ribbon {
     position: absolute;
