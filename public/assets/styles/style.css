@@ -9,6 +9,11 @@ body {
   background-color: rgba(246, 245, 245, 1);
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+}
+
 .popup {
   background-color: #466ebf;
   color: white;
@@ -240,9 +245,11 @@ header {
 
 .gifts-overview {
   padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 
   .gift {
-    margin-bottom: 1rem;
     width: 250px;
     background-color: white;
     padding: 0.25rem;
