@@ -8,6 +8,9 @@ const engine = new Liquid();
 app.engine("liquid", engine.express());
 app.set("views", "./views");
 
+//name in input kan hetzelfde als de waarde in de database
+//action van form kan je zelf een naam geven
+
 app.get("/", async function (req, res) {
   const params = {
     fields: "name,image,amount,slug,id",
