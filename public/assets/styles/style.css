@@ -224,6 +224,11 @@ header {
   margin: 1rem;
 }
 
+.gifts-overview-header {
+  font-size: clamp(20px, 4vw, 32px);
+  width: 100%;
+}
+
 .category-title {
   margin: 1rem;
 }
