@@ -224,6 +224,10 @@ header {
   margin: 1rem;
 }
 
+.category-title {
+  margin: 1rem;
+}
+
 .family-member {
   color: #466ebf;
 }
@@ -285,6 +289,13 @@ header {
 
 .wishlist-header {
   margin: 1rem;
+}
+
+.SEO-paragraph {
+  background-color: white;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
 }
 
 footer {

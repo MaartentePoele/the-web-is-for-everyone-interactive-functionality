@@ -1,11 +1,16 @@
 {% include 'partials/head.liquid' %}
 
-{% comment %} <div class="popup visually-hidden">
-  <p>Gift saved!</p>
-  <button class="close-button"><img src="/assets/images/close-icon.svg" alt=""></button>
-</div> {% endcomment %}
-
-<h1 class="overview-header">I'm looking for a gift for... <span class="family-member">my uncle</span></h1>
+{% if currentPath == '/' %}
+  <h1 class="overview-header">I'm looking for a gift for... <span class="family-member">my uncle</span></h1>
+{% else %}
+  <div class="category-title">
+    <h1>21 jaar? Dit zijn de cadeaus die indruk maken.</h1>
+    <p>
+      Op zoek naar een leuk cadeau voor iemand van 21 jaar? Hier vind je een aantal originele cadeau-suggesties, gespot
+      door de Milledoni community van cadeauspotters
+    </p>
+  </div>
+{% endif %}
 
 {% include 'partials/ribbon.liquid' %}
 
@@ -39,6 +44,14 @@
   {% endfor %}
 </section>
 
-
+<p class="SEO-paragraph">
+  De 21e verjaardag is een echte mijlpaal, vaak gevierd met een uitgebreid 21 diner of een groot feest. Of je nu een
+  cadeau zoekt voor je zoon, dochter, beste vriend of vriendin, bij Milledoni begrijpen we dat een standaard presentje
+  niet volstaat. Onze community selecteert daarom dagelijks de meest unieke cadeaus voor 21-jarigen: van
+  gepersonaliseerde items en luxe accessoires tot ervaringen die ze nooit meer vergeten. Door te kiezen voor een cadeau
+  dat is gespot door echte kenners, weet je zeker dat je aankomt met iets dat perfect aansluit bij de belevingswereld
+  van een jonge volwassene. Laat je inspireren door onze collectie en maak van deze bijzondere verjaardag een
+  onvergetelijk moment.
+</p>
 
 {% include 'partials/foot.liquid' %}
