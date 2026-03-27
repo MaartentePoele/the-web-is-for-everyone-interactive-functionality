@@ -75,7 +75,19 @@ app.get("/gift/:slug", async function (req, res) {
   );
   const productResponseJSON = await productResponse.json();
 
+  const userResponse = await fetch(
+    "https://fdnd-agency.directus.app/items/milledoni_users/58/?fields=*.*",
+  );
+  const userData = await userResponse.json();
+
+  const likedGifts = userData.data.liked_products.map(
+    (item) => item.milledoni_products_id,
+  );
+
+  const wishlistCount = likedGifts.length;
+
   res.render("gift.liquid", {
+    wishlistCount: wishlistCount,
     product: productResponseJSON.data[0],
   });
 });
@@ -115,7 +127,8 @@ app.get("/wishlist", async function (req, res) {
 });
 
 app.post("/", async function (request, response) {
-  const fetchResponse = await fetch(
+  // const fetchResponse = 
+  await fetch(
     "https://fdnd-agency.directus.app/items/milledoni_users_milledoni_products_1",
     {
       method: "POST",
@@ -129,8 +142,8 @@ app.post("/", async function (request, response) {
     },
   );
 
-  const fetchResponseJSON = await fetchResponse.json();
-  console.log(fetchResponseJSON);
+  // const fetchResponseJSON = await fetchResponse.json();
+  // console.log(fetchResponseJSON);
 
   response.redirect(303, request.header("Referer") || "/");
 });

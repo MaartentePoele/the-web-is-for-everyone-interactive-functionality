@@ -2,10 +2,7 @@
 
 <h1 class="wishlist-header">Wishlist</h1>
 
-<div class="ribbon-container">
-  <img src="/assets/images/ribbon.svg" alt="">
-  <div class="ribbon-line"></div>
-</div>
+{% include 'partials/ribbon.liquid' %}
 
 <section class="gifts-overview">
   <h2 class="display-none">Gifts</h2>
@@ -13,9 +10,7 @@
     {% assign product = likedProduct.milledoni_products_id %}
     <article class="gift">
       <form method="post" action="/">
-        <button class="save-button" type="submit" name="id" value="{{ product.id }}">
-          <img src="/assets/images/black-saved-icon.svg" alt="">
-        </button>
+        {% include 'partials/saved-button.liquid' %}
       </form>
       <a href="/gift/{{ product.slug }}">
         <img class="product-image" src="{{ product.image }}" alt="">

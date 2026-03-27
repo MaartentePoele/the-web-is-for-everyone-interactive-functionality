@@ -1,16 +1,21 @@
 {% include 'partials/head.liquid' %}
 
-<div class="popup visually-hidden">
+{% comment %} <div class="popup visually-hidden">
   <p>Gift saved!</p>
   <button class="close-button"><img src="/assets/images/close-icon.svg" alt=""></button>
-</div>
+</div> {% endcomment %}
 
+<h1 class="overview-header">I'm looking for a gift for... <span class="family-member">my uncle</span></h1>
 
-<h1 class="overview-header">I'm looking for a gift for... <span>my uncle</span></h1>
-<div class="ribbon-container">
-  <img src="/assets/images/ribbon.svg" alt="">
-  <div class="ribbon-line"></div>
-</div>
+{% include 'partials/ribbon.liquid' %}
+
+<aside class="chatbot">
+  <div class="input-container">
+    <button class="mic-button"><img class="chatbot-icon" src="/assets/images/mic-icon.svg" alt=""></button>
+    <input class="chatbot-input" type="text" placeholder="Type your message...">
+    <button class="search-button"><img class="chatbot-icon" src="/assets/images/search-icon.svg" alt=""></button>
+  </div>
+</aside>
 
 <section class="gifts-overview">
   <h2 class="display-none">Gifts</h2>
@@ -19,13 +24,9 @@
       <article class="gift">
         <form method="post" action="/">
           {% if likedGifts contains product.id %}
-            <button class="save-button" type="submit" name="id" value="{{ product.id }}">
-              <img src="/assets/images/black-saved-icon.svg" alt="">
-            </button>
+            {% include 'partials/saved-button.liquid' %}
           {% else %}
-            <button class="save-button" type="submit" name="id" value="{{ product.id }}">
-              <img src="/assets/images/black-save-icon.svg" alt="">
-            </button>
+            {% include 'partials/save-button.liquid' %}
           {% endif %}
         </form>
         <a href="/gift/{{ product.slug }}">
@@ -38,12 +39,6 @@
   {% endfor %}
 </section>
 
-<aside class="chatbot">
-  <div class="input-container">
-    <button class="mic-button"><img src="/assets/images/mic-icon.svg" alt=""></button>
-    <input type="text" placeholder="Type your message...">
-    <button class="search-button"><img src="/assets/images/search-icon.svg" alt=""></button>
-  </div>
-</aside>
+
 
 {% include 'partials/foot.liquid' %}
