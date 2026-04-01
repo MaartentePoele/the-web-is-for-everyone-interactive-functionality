@@ -1,3 +1,21 @@
+:root {
+  --accent-color: #466ebf;
+
+  --primary-background-color: rgb(246 245 245);
+  --secondary-background-color: rgb(249 242 212);
+
+  --primary-border-color: rgb(201 201 201);
+  --secondary-border-color: rgba(201 201 201 / 30%);
+
+  --white: #fff;
+  --black: #000;
+
+  --primary-text-color: #fff;
+  --secondary-text-color: rgb(33 33 33);
+  --tertiary-text-color: rgb(70 70 70);
+  --quaternary-text-color: rgb(89 89 89);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,7 +24,7 @@
 }
 
 body {
-  background-color: rgba(246 245 245 / 100%);
+  background-color: var(--primary-background-color);
 }
 
 main {
@@ -16,7 +34,7 @@ main {
 
 a {
   text-decoration: none;
-  color: black;
+  color: var(--black);
 }
 
 a:hover {
@@ -42,24 +60,24 @@ header {
 }
 
 .header-list-item {
-  background-color: white;
+  background-color: var(--white);
   border-radius: 50%;
   width: 50px;
   aspect-ratio: 1;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  border: 0.5px solid rgba(201 201 201 / 100%);
+  border: 0.5px solid var(--primary-border-color);
 }
 
 .header-list-item-link {
   margin-bottom: 0.5rem;
   position: relative;
-  color: white;
+  color: var(--white);
 }
 
 .wishlist-counter {
-  background-color: #466ebf;
+  background-color: var(--accent-color);
   border-radius: 50%;
   width: 18px;
   aspect-ratio: 1;
@@ -75,7 +93,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-bottom: 6px solid rgba(70 110 191 / 100%);
+  border-bottom: 6px solid var(--accent-color);
   height: 45px;
   margin-top: 1rem;
 }
@@ -89,7 +107,7 @@ header {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  background-color: white;
+  background-color: var(--white);
 }
 
 .info-name {
@@ -97,7 +115,7 @@ header {
 }
 
 .info-price {
-  color: rgba(33 33 33 / 100%);
+  color: var(--secondary-text-color);
 }
 
 .info-price {
@@ -107,10 +125,10 @@ header {
 
 .info-add-to-button {
   border: none;
-  background-color: rgba(70 110 191 / 100%);
+  background-color: var(--accent-color);
   border-radius: 5rem;
   padding: 0.75rem 1.5rem;
-  color: white;
+  color: var(--white);
   font-size: 20px;
   display: flex;
   align-items: center;
@@ -130,16 +148,15 @@ header {
 }
 
 .info-image {
-  /* width: clamp(250px, 100%, 500px); */
   max-width: 500px;
 }
 
 .info-description {
-  color: rgba(70 70 70 / 100%);
+  color: var(--tertiary-text-color);
 }
 
 .chatbot {
-  background-color: white;
+  background-color: var(--white);
   position: fixed;
   z-index: 10;
   bottom: 0;
@@ -152,19 +169,19 @@ header {
   padding: 1rem;
   box-shadow: 0px -3px 15px rgba(0 0 0 / 20%);
 
-  @media (min-width: 750px) {
+  /* @media (min-width: 750px) {
     background-color: red;
     height: 100%;
     width: 500px;
     border-radius: 0;
     position: static;
-  }
+  } */
 }
 
 .input-container {
   border: 5px solid transparent;
   background:
-    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(var(--white), var(--white)) padding-box,
     conic-gradient(
         from 0turn at 50% 50%,
         #466ebf 11%,
@@ -234,7 +251,7 @@ header {
 }
 
 .family-member {
-  color: #466ebf;
+  color: var(--accent-color);
 }
 
 .gifts-overview {
@@ -246,7 +263,7 @@ header {
 
 .gift {
   width: 250px;
-  background-color: white;
+  background-color: var(--white);
   padding: 0.25rem;
   position: relative;
   display: flex;
@@ -255,7 +272,7 @@ header {
 }
 
 .save-button {
-  background-color: white;
+  background-color: var(--white);
   border: none;
   position: absolute;
   right: 0;
@@ -267,7 +284,7 @@ header {
   height: 50px;
   display: grid;
   place-items: center;
-  border: 2px solid rgba(201 201 201 / 30%);
+  border: 2px solid var(--secondary-border-color);
 }
 
 .save-button:hover {
@@ -283,7 +300,7 @@ header {
 }
 
 .product-price {
-  color: #595959;
+  color: var(--quaternary-text-color);
   font-size: 14px;
 }
 
@@ -297,14 +314,14 @@ header {
 }
 
 .SEO-paragraph {
-  background-color: white;
+  background-color: var(--white);
   margin: 1rem;
   padding: 1rem;
   border-radius: 0.5rem;
 }
 
 footer {
-  background-color: rgba(249 242 212 / 100%);
+  background-color: var(--secondary-background-color);
   padding: 1rem 1rem 110px 1rem;
   display: flex;
   flex-direction: column;
