@@ -269,6 +269,14 @@ header {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+
+  transition: 0.3s;
+}
+
+.gift:hover {
+  @media (prefers-reduced-motion: no-preference) {
+    scale: 1.025;
+  }
 }
 
 .save-button {
