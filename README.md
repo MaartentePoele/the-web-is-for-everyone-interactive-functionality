@@ -7,7 +7,8 @@ Een website om cadeau-ideeën op te doen.
 <!-- Bij Beschrijving staat kort beschreven wat voor project het is en wat je hebt gemaakt -->
 <!-- Voeg een mooie poster visual of video toe 📸 -->
 Check [hier](https://the-web-is-for-everyone-interactive-3mf1.onrender.com/) de website.
-<img width="1125" height="2436" alt="image" src="https://github.com/user-attachments/assets/c57c9a16-9092-44b0-9762-e595c40ff836" />
+
+<img width="500" height="1083" alt="image" src="https://github.com/user-attachments/assets/c57c9a16-9092-44b0-9762-e595c40ff836" />
 
 ## Gebruik
 <!-- Bij Gebruik staat de user story, hoe het werkt en wat je er mee kan. -->
@@ -106,9 +107,8 @@ Dan wordt het weer opgehaald uit de database om het op de wishlist-pagina weer t
 
 ## Installatie
 <!-- Bij Installatie staat hoe een andere developer aan jouw repo kan werken -->
-
-
-## Bronnen
+Clone de repository.
+Gebruik `npm start` in de console om de website op te starten.
 
 ## Licentie
 
