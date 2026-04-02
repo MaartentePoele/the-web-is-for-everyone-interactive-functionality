@@ -8,9 +8,6 @@ const engine = new Liquid();
 app.engine("liquid", engine.express());
 app.set("views", "./views");
 
-//name in input kan hetzelfde als de waarde in de database
-//action van form kan je zelf een naam geven
-
 const userResponse = await fetch(
   "https://fdnd-agency.directus.app/items/milledoni_users/58/?fields=*.*",
 );
