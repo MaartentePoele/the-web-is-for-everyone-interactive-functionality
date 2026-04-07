@@ -21,7 +21,7 @@ Je kan met de button op elk cadeautje het cadeau toevoegen aan je verlanglijstje
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framework of library gebruikt? -->
 ### Loops
 In mijn code gebruik ik een Liquid loop om alle cadeaus weer te geven op de pagina:
-```
+```liquid
   {% for product in products %}
     {% if product.amount != '0.00' %}
       <article class="gift">
@@ -60,7 +60,7 @@ Dit is de interactie van de POST:
 <img width="1406" height="874" alt="Group 689" src="https://github.com/user-attachments/assets/c6eda9d6-29ff-4b20-b26e-490964181a07" />
 
 Je klikt op deze button:
-```
+```html
 <button class="save-button" type="submit" name="id" value="{{ product.id }}">
   <img class="product-save-image" src="/assets/images/black-save-icon.svg" alt="">
 </button>
