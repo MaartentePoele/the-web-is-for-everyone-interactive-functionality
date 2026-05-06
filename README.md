@@ -104,7 +104,6 @@ Dan wordt het weer opgehaald uit de database om het op de wishlist-pagina weer t
   {% endfor %}
 ```
 
-
 ## Installatie
 <!-- Bij Installatie staat hoe een andere developer aan jouw repo kan werken -->
 Clone de repository.
